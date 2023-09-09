@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Data 1
+        const dolphinsScores = [44, 23, 71];
+        const koalasScores = [65, 54, 49];
+
+        const calcAverage = (scores) => {
+        const total = scores.reduce((acc, score) => acc + score, 0);
+        return total / scores.length;
+    };
+
+        const dolphinsAverage = calcAverage(dolphinsScores);
+        const koalasAverage = calcAverage(koalasScores);
+
+        const checkWinner = (avgDolphins, avgKoalas) => {
+        if (avgDolphins >= 2 * avgKoalas) {
+            console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+            console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+            console.log("No team wins.");
+    }
+    };
+
+checkWinner(dolphinsAverage, koalasAverage);
+
+    </script>
+</body>
+</html>
